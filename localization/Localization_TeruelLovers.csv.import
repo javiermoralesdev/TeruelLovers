@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dx62d3lx3aj15"
+
+[deps]
+
+files=["res://localization/Localization_TeruelLovers.en.translation", "res://localization/Localization_TeruelLovers.es.translation"]
+
+source_file="res://localization/Localization_TeruelLovers.csv"
+dest_files=["res://localization/Localization_TeruelLovers.en.translation", "res://localization/Localization_TeruelLovers.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d00vx6i85kg84"
+path="res://.godot/imported/Crossing the Chasm.mp3-802189052d277b5c19f2631498ad5d3e.mp3str"
+
+[deps]
+
+source_file="res://music/Crossing the Chasm.mp3"
+dest_files=["res://.godot/imported/Crossing the Chasm.mp3-802189052d277b5c19f2631498ad5d3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
