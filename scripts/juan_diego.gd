@@ -42,3 +42,8 @@ func _physics_process(_delta):
 func _on_attack_timer_timeout():
 	is_attacking = false
 	$Sword/SwordHitBox.disabled = true
+
+
+func _on_sword_area_entered(area):
+	if is_attacking and area.is_in_group("enemy"):
+		(area as Enemy).take_damage(Enemy.EnemyType.Sword)

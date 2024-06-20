@@ -1,90 +1,88 @@
-[gd_scene load_steps=26 format=3 uid="uid://t1x7kpfxcf55"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://dngo4clgdeqg4"]
 
-[ext_resource type="Script" path="res://scripts/isabel.gd" id="1_gkmp1"]
-[ext_resource type="PackedScene" uid="uid://dhk0g36gy746v" path="res://scenes/arrow.tscn" id="2_lhi81"]
-[ext_resource type="Texture2D" uid="uid://t41ke1mhifia" path="res://sprites/Archer_Purple.png" id="3_g6t42"]
+[ext_resource type="Texture2D" uid="uid://t41ke1mhifia" path="res://sprites/Archer_Purple.png" id="1_hi2ro"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwq7r"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtaga"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(192, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwbax"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(384, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6cbn"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(576, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkahg"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(768, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghrpo"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tvbh"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(0, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jv8nc"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(192, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4nkg"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(384, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xh6gr"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(576, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmm2t"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(768, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqvnf"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(960, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dme3k"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(0, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ixua"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(192, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4s6xv"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(384, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0goev"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(576, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mukjb"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(768, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekb35"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(960, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emc4e"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(1152, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knp3h"]
-atlas = ExtResource("3_g6t42")
+atlas = ExtResource("1_hi2ro")
 region = Rect2(1344, 576, 192, 192)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yln6f"]
+[resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -161,24 +159,3 @@ animations = [{
 "name": &"shoot",
 "speed": 10.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_78yum"]
-size = Vector2(34, 50)
-
-[node name="Isabel" type="CharacterBody2D" groups=["isabel"]]
-script = ExtResource("1_gkmp1")
-arrowPrefab = ExtResource("2_lhi81")
-
-[node name="IsabelSprite" type="AnimatedSprite2D" parent="." groups=["isabel"]]
-sprite_frames = SubResource("SpriteFrames_yln6f")
-animation = &"idle"
-
-[node name="IsabelCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_78yum")
-
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.7
-one_shot = true
-
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

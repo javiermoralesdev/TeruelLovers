@@ -1,81 +1,80 @@
-[gd_scene load_steps=24 format=3 uid="uid://b73svirf544oe"]
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://stm0cp4fplwj"]
 
-[ext_resource type="Script" path="res://scripts/juan_diego.gd" id="1_td8nu"]
-[ext_resource type="Texture2D" uid="uid://sy2ttmwjfr2b" path="res://sprites/JuanDiego/Warrior_Red.png" id="2_kqykm"]
+[ext_resource type="Texture2D" uid="uid://sy2ttmwjfr2b" path="res://sprites/JuanDiego/Warrior_Red.png" id="1_c8pmg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6oye"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(0, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmqcb"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(192, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_by67m"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(384, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgtpe"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(576, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihoai"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(768, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ao4vm"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(960, 384, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfbu0"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(0, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tp7if"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(192, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxtos"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(384, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6psj"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(576, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x07kf"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(768, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0jfp"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ssgw"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(0, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gffsw"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(192, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jk742"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(384, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_di4n1"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(576, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05eek"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(768, 192, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hew6o"]
-atlas = ExtResource("2_kqykm")
+atlas = ExtResource("1_c8pmg")
 region = Rect2(960, 192, 192, 192)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gshej"]
+[resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -146,38 +145,3 @@ animations = [{
 "name": &"move",
 "speed": 10.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_516y0"]
-size = Vector2(32, 54)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iae5c"]
-size = Vector2(51, 20)
-
-[node name="JuanDiego" type="CharacterBody2D" groups=["jd"]]
-script = ExtResource("1_td8nu")
-
-[node name="JDSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_gshej")
-animation = &"move"
-autoplay = "idle"
-
-[node name="JDCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_516y0")
-
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.6
-
-[node name="SwordTimer" type="Timer" parent="."]
-wait_time = 0.3
-
-[node name="Sword" type="Area2D" parent="." groups=["hurtbox"]]
-
-[node name="SwordHitBox" type="CollisionShape2D" parent="Sword"]
-position = Vector2(55, 0)
-shape = SubResource("RectangleShape2D_iae5c")
-disabled = true
-
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
-[connection signal="timeout" from="SwordTimer" to="." method="_on_sword_timer_timeout"]
-[connection signal="area_entered" from="Sword" to="." method="_on_sword_area_entered"]

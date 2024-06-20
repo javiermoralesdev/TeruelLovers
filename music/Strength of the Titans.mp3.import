@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Strength of the Titans.mp3-2fd152dd960d3ad628
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

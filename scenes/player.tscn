@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b73svirf544oe" path="res://scenes/juan_diego.tscn" id="1_qfsnm"]
 [ext_resource type="PackedScene" uid="uid://t1x7kpfxcf55" path="res://scenes/isabel.tscn" id="2_dmu2i"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_o5x00")
 isabel = ExtResource("2_dmu2i")
 juan_diego = ExtResource("1_qfsnm")

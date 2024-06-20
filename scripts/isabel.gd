@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var arrowPrefab: PackedScene
 
-const SPEED = 350
+const SPEED = 400
 var is_attacking = false
 
 func _physics_process(_delta):
@@ -10,10 +10,11 @@ func _physics_process(_delta):
 	
 		
 	if not is_attacking:
-		direction =Vector2(
+		direction = Vector2(
 			Input.get_axis("left", "right"),
 			Input.get_axis("up", "down")
 		)
+		direction = direction.normalized()
 		if direction.length() != 0:
 			$IsabelSprite.play("move")
 		else:
@@ -30,7 +31,7 @@ func _physics_process(_delta):
 		is_attacking = true
 		$IsabelSprite.play("shoot")
 		$AttackTimer.start()
-		if get_viewport().get_mouse_position().x < position.x:
+		if get_viewport().get_mouse_position().x < global_position.x:
 			$IsabelSprite.flip_h = true
 		else:
 			$IsabelSprite.flip_h = false
@@ -43,9 +44,9 @@ func _physics_process(_delta):
 func _on_attack_timer_timeout():
 	is_attacking = false
 	var mousePos = get_viewport().get_mouse_position()
-	var lookDir = mousePos - position
+	var lookDir = mousePos - global_position
 	var angle = atan2(lookDir.y, lookDir.x)
 	var arrow_instance = arrowPrefab.instantiate()
 	arrow_instance.rotation = angle
-	arrow_instance.position = position
+	arrow_instance.position = global_position
 	get_tree().root.add_child(arrow_instance)

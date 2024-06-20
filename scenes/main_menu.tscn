@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://kjdljan4e1uj"]
+
+[ext_resource type="Texture2D" uid="uid://blt0p62617d07" path="res://sprites/UI/Banners/Carved_9Slides.png" id="1_rd6oh"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vjbs6"]
+[ext_resource type="Texture2D" uid="uid://do47obm7e0a75" path="res://sprites/UI/Ribbons/Ribbon_Red_3Slides.png" id="2_lalsw"]
+[ext_resource type="FontFile" uid="uid://kdkydoq43j66" path="res://fonts/Agreloy.ttf" id="3_iq3vj"]
+[ext_resource type="SpriteFrames" uid="uid://stm0cp4fplwj" path="res://animations/juan_diego_anim.tres" id="4_u5emu"]
+[ext_resource type="SpriteFrames" uid="uid://dngo4clgdeqg4" path="res://animations/isabel.tres" id="5_vf0pb"]
+[ext_resource type="AudioStream" uid="uid://cuokyd4vr81nw" path="res://music/Vibing Over Venus.mp3" id="6_en56j"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjbs6")
+
+[node name="MainPanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -239.5
+offset_right = 141.0
+offset_bottom = 239.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rd6oh")
+
+[node name="Title" type="TextureRect" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = -9.5
+offset_right = 186.0
+offset_bottom = 54.5
+grow_horizontal = 2
+texture = ExtResource("2_lalsw")
+
+[node name="TitleLabel" type="Label" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.0
+offset_right = 118.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_iq3vj")
+theme_override_font_sizes/font_size = 30
+text = "TeruelLovers"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 100.0
+offset_right = 90.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_iq3vj")
+theme_override_font_sizes/font_size = 30
+text = "mm_play"
+text_overrun_behavior = 3
+
+[node name="CreditsButton" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 170.0
+offset_right = 96.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_iq3vj")
+theme_override_font_sizes/font_size = 30
+text = "mm_credits"
+
+[node name="ExitButton" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 240.0
+offset_right = 90.0
+offset_bottom = 295.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_iq3vj")
+theme_override_font_sizes/font_size = 30
+text = "mm_exit"
+
+[node name="ScoreLabel" type="Label" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 338.0
+offset_right = 130.0
+offset_bottom = 368.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_iq3vj")
+theme_override_font_sizes/font_size = 30
+text = "Score"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="JD" type="AnimatedSprite2D" parent="."]
+position = Vector2(97, 207)
+sprite_frames = ExtResource("4_u5emu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Isabel" type="AnimatedSprite2D" parent="."]
+position = Vector2(876, 213)
+sprite_frames = ExtResource("5_vf0pb")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_en56j")
+autoplay = true
+
+[connection signal="pressed" from="MainPanel/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainPanel/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainPanel/ExitButton" to="." method="_on_exit_button_pressed"]

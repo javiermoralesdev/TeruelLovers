@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="TeruelLovers"
-run/main_scene="res://scenes/player.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/image="res://splash/splash.png"
 config/icon="res://icon/icon.png"
 
 [autoload]
 
 GLOBAL="*res://scripts/global.gd"
+Transition="*res://scenes/transition_screen.tscn"
 
 [display]
 
@@ -60,7 +62,7 @@ switch={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/Localization_TeruelLovers.en.translation", "res://localization/Localization_TeruelLovers.es.translation")
+locale/translations=PackedStringArray("res://localization/Localization.en.translation", "res://localization/Localization.es.translation")
 
 [rendering]
 
@@ -68,3 +70,4 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

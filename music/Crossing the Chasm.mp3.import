@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Crossing the Chasm.mp3-802189052d277b5c19f263
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

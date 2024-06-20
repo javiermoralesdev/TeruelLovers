@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Vibing Over Venus.mp3-c8ef4c2e51e2f5b1c874591
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
