@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	if OS.get_name() == "HTML5":
+	if OS.get_name() == "Web":
 		$MainPanel/ExitButton.queue_free()
 	
 	$MainPanel/ScoreLabel.text = tr("hscore") + ": " + str(GLOBAL.hScore)
